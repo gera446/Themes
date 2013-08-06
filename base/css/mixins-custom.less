@@ -1,0 +1,32 @@
+.flatButtons(@btnColor, @textColor:@white){
+	color: @textColor;
+	text-shadow: 0 1px 1px darken(@btnColor, 10%);
+	background: @btnColor;
+	border: none;
+	border-bottom: 2px solid darken(@btnColor, 10%);
+	&:hover,
+	&:focus{
+		background: darken(@btnColor, 10%);
+		color: @textColor;
+		text-decoration: none;
+	}	
+}
+
+// retina.less
+// A helper mixin for applying high-resolution background images (http://www.retinajs.com)
+.retina-backgound(@path, @w: auto, @h: auto) {
+  background-image: url(@path);
+  @at2x_path: ~`"@{path}".split('.').slice(0, "@{path}".split('.').length - 1).join(".") + "@2x" + "." + "@{path}".split('.')["@{path}".split('.').length - 1]`;
+
+  @media 	only screen and (-webkit-min-device-pixel-ratio: 2),
+  			only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  			only screen and (-moz-min-device-pixel-ratio: 2),
+  			only screen and (-o-min-device-pixel-ratio: 3/2),
+  			only screen and (-o-min-device-pixel-ratio: 2/1),
+  			only screen and (min--moz-device-pixel-ratio: 1.5),
+  			only screen and (min-device-pixel-ratio: 1.5),
+  			only screen and (min-device-pixel-ratio: 2) {
+    background-image: url(@at2x_path);
+    background-size: @w @h;
+  }  
+}

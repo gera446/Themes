@@ -1,0 +1,38 @@
+.big-date{
+	.span6{
+		margin-top: @baseLineHeight;
+	}
+	.span2{
+		margin-top: @baseLineHeight/2;
+	}
+}
+.full-picture{
+	.span2{
+		margin-top: @baseLineHeight;	
+	}
+}
+.image-solo{
+	clear: both;
+	overflow: hidden;
+	.span2{
+		background: @linkColor;
+		color: @white;
+		overflow: hidden;
+		& > *{
+			padding-left: @baseLineHeight;
+		}
+	}
+	.span10{
+		position: relative;
+		margin: 0;
+		blockquote{
+			padding: @baseLineHeight;
+			background: @bodyBackground;
+			position: absolute;
+			bottom: @baseLineHeight/2;
+			width: 80%;
+			margin-left: 7%;
+			border-left-color: @linkColor;
+		}
+	}
+}
